@@ -416,7 +416,7 @@ plt.show()
 
 # Final comprehensive analysis
 print("\n" + "="*60)
-print("🎯 COMPREHENSIVE PERFORMANCE ANALYSIS")
+print(" COMPREHENSIVE PERFORMANCE ANALYSIS")
 print("="*60)
 
 best_val_acc = max(history['val_accuracy'])
@@ -424,40 +424,40 @@ final_train_acc = history['accuracy'][-1]
 final_val_acc = history['val_accuracy'][-1]
 overfitting_gap = abs(final_train_acc - final_val_acc)
 
-print(f"🎯 Target Validation Accuracy: 92.00%")
-print(f"📊 Best Validation Accuracy: {best_val_acc:.4f} ({best_val_acc*100:.2f}%)")
-print(f"📈 Test Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
-print(f"🔄 Overfitting Gap: {overfitting_gap:.4f} ({overfitting_gap*100:.2f}%)")
-print(f"🎚️ Optimal Threshold: {best_threshold:.3f}")
+print(f" Target Validation Accuracy: 92.00%")
+print(f"Best Validation Accuracy: {best_val_acc:.4f} ({best_val_acc*100:.2f}%)")
+print(f" Test Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
+print(f" Overfitting Gap: {overfitting_gap:.4f} ({overfitting_gap*100:.2f}%)")
+print(f"🎚 Optimal Threshold: {best_threshold:.3f}")
 
 # Achievement assessment
 target_achieved = best_val_acc >= 0.92
 overfitting_controlled = overfitting_gap < 0.05
 
-print(f"\n📋 ACHIEVEMENT STATUS:")
+print(f"\n ACHIEVEMENT STATUS:")
 if target_achieved:
-    print("✅ TARGET ACHIEVED: Validation accuracy ≥92%")
+    print(" Validation accuracy ≥92%")
 else:
     remaining = 0.92 - best_val_acc
-    print(f"❌ Target not achieved. Need {remaining:.4f} ({remaining*100:.2f}%) more accuracy.")
+    print(f" Target not achieved. Need {remaining:.4f} ({remaining*100:.2f}%) more accuracy.")
 
 if overfitting_controlled:
-    print("✅ OVERFITTING CONTROLLED: Train-validation gap <5%")
+    print(" OVERFITTING CONTROLLED: Train-validation gap <5%")
 else:
-    print(f"⚠️  Overfitting detected: {overfitting_gap:.4f} gap")
+    print(f" Overfitting detected: {overfitting_gap:.4f} gap")
 
 # Overall assessment
 if target_achieved and overfitting_controlled:
-    print("\n🎉 SUCCESS: All targets achieved!")
-    print("🏆 Model ready for deployment!")
+    print("\n SUCCESS: All targets achieved!")
+    print(" Model ready for deployment!")
 elif best_val_acc >= 0.90:
-    print("\n🔶 EXCELLENT: Very close to target!")
-    print("💡 Consider ensemble methods or more data for final boost.")
+    print("\n EXCELLENT: Very close to target!")
+    print(" Consider ensemble methods or more data for final boost.")
 elif best_val_acc >= 0.85:
-    print("\n🔶 GOOD: Significant improvement achieved!")
-    print("💡 Try different architectures (ResNet50, EfficientNet) or data augmentation.")
+    print("\n GOOD: Significant improvement achieved!")
+    print(" Try different architectures (ResNet50, EfficientNet) or data augmentation.")
 else:
-    print("\n🔴 NEEDS IMPROVEMENT: Try different approach.")
+    print("\n NEEDS IMPROVEMENT: Try different approach.")
 
 # Prediction examples
 print(f"\n=== PREDICTION EXAMPLES ===")
@@ -489,11 +489,11 @@ plt.suptitle("Transfer Learning Model Predictions", fontsize=16, fontweight='bol
 plt.tight_layout()
 plt.show()
 
-print(f"\n🔬 MODEL ARCHITECTURE: VGG16 Transfer Learning")
-print(f"📊 Dataset Size: {arching_count + tidak_arching_count} images")
-print(f"⚙️ Two-stage training: Feature extraction + Fine-tuning")
-print(f"🎯 Optimized threshold: {best_threshold:.3f}")
-print(f"🏁 Training completed successfully!")
+print(f"\n MODEL ARCHITECTURE: VGG16 Transfer Learning")
+print(f" Dataset Size: {arching_count + tidak_arching_count} images")
+print(f" Two-stage training: Feature extraction + Fine-tuning")
+print(f" Optimized threshold: {best_threshold:.3f}")
+print(f" Training completed successfully!")
 
 # FINAL OPTIMIZATION: Ensemble + Advanced Regularization
 # Menambahkan ke existing code untuk mencapai 92%+ validation accuracy
@@ -515,7 +515,7 @@ except ImportError:
     print("AdamW not available, using Adam with manual weight decay")
     AdamW = tf.keras.optimizers.Adam
 
-print("🚀 STARTING FINAL OPTIMIZATION FOR 92%+ ACCURACY")
+print("  FINAL OPTIMIZATION FOR 92%+ ACCURACY")
 print("="*60)
 
 # TECHNIQUE 1: Ensemble of Multiple Transfer Learning Models
@@ -614,7 +614,7 @@ def simple_cosine_schedule(epoch, lr):
         return 0.0001
 
 # TECHNIQUE 5: Model Ensembling
-print("🏗️ Creating ensemble of models...")
+print(" Creating ensemble of models...")
 
 # Create multiple models
 model_vgg16, base_vgg16 = create_transfer_learning_model()
@@ -625,13 +625,13 @@ models = [model_vgg16, model_resnet, model_efficientnet]
 model_names = ['VGG16', 'ResNet50', 'VGG16-Alt']  # Updated name for alternative model
 base_models = [base_vgg16, base_resnet, base_efficientnet]
 
-print(f"✅ Created {len(models)} models for ensemble")
+print(f" Created {len(models)} models for ensemble")
 
 # TECHNIQUE 6: Advanced Training Strategy
 def train_model_advanced(model, base_model, model_name, train_data, val_data):
     """Advanced training with all optimization techniques"""
     
-    print(f"\n🎯 Training {model_name} with advanced techniques...")
+    print(f"\n Training {model_name} with advanced techniques...")
     
     # Stage 1: Feature extraction with label smoothing
     # Use Adam with weight decay simulation if AdamW not available
@@ -764,9 +764,9 @@ for model, base_model, name in zip(models, base_models, model_names):
     
     # Quick evaluation
     val_loss, val_acc, val_prec, val_rec = trained_model.evaluate(val_dataset, verbose=0)
-    print(f"✅ {name}: Val Accuracy = {val_acc:.4f} ({val_acc*100:.2f}%)")
+    print(f" {name}: Val Accuracy = {val_acc:.4f} ({val_acc*100:.2f}%)")
 
-print("\n🎯 ENSEMBLE EVALUATION")
+print("\n ENSEMBLE EVALUATION")
 print("="*40)
 
 # TECHNIQUE 7: Weighted Ensemble Prediction
@@ -824,7 +824,7 @@ ensemble_weights = [acc / sum(individual_accuracies) for acc in individual_accur
 print(f"\nEnsemble weights: {[f'{w:.3f}' for w in ensemble_weights]}")
 
 # TECHNIQUE 8: Final Ensemble Evaluation
-print("\n🏆 FINAL ENSEMBLE RESULTS")
+print("\n ENSEMBLE RESULTS")
 print("="*40)
 
 # Test set evaluation
@@ -869,16 +869,16 @@ final_precision = precision_score(test_true_labels, final_binary_predictions)
 final_recall = recall_score(test_true_labels, final_binary_predictions)
 final_f1 = f1_score(test_true_labels, final_binary_predictions)
 
-print(f"🎯 ENSEMBLE RESULTS (Threshold: {best_ensemble_threshold:.3f})")
-print(f"📊 Test Accuracy: {final_accuracy:.4f} ({final_accuracy*100:.2f}%)")
-print(f"🔹 Precision: {final_precision:.4f}")
-print(f"🔹 Recall: {final_recall:.4f}")
-print(f"🔹 F1-score: {final_f1:.4f}")
+print(f" ENSEMBLE RESULTS (Threshold: {best_ensemble_threshold:.3f})")
+print(f" Test Accuracy: {final_accuracy:.4f} ({final_accuracy*100:.2f}%)")
+print(f" Precision: {final_precision:.4f}")
+print(f" Recall: {final_recall:.4f}")
+print(f" F1-score: {final_f1:.4f}")
 
 # Validation accuracy of best individual model
 best_model_idx = np.argmax(individual_accuracies)
 best_val_acc = individual_accuracies[best_model_idx]
-print(f"🏆 Best Individual Model: {model_names[best_model_idx]} ({best_val_acc:.4f})")
+print(f" Best Individual Model: {model_names[best_model_idx]} ({best_val_acc:.4f})")
 
 # TECHNIQUE 9: Advanced Visualization
 plt.figure(figsize=(15, 10))
@@ -958,35 +958,16 @@ plt.show()
 
 # FINAL ASSESSMENT
 print("\n" + "="*70)
-print("🏁 FINAL COMPREHENSIVE ASSESSMENT")
+print(" FINAL COMPREHENSIVE ASSESSMENT")
 print("="*70)
 
 target_achieved = max(individual_accuracies) >= 0.92 or final_accuracy >= 0.92
 overfitting_controlled = True  # Ensemble naturally reduces overfitting
 
-print(f"🎯 Target Validation Accuracy: 92.00%")
-print(f"📊 Best Individual Val Accuracy: {max(individual_accuracies):.4f} ({max(individual_accuracies)*100:.2f}%)")
-print(f"🏆 Ensemble Test Accuracy: {final_accuracy:.4f} ({final_accuracy*100:.2f}%)")
-print(f"🎚️ Optimal Ensemble Threshold: {best_ensemble_threshold:.3f}")
-print(f"⚖️ Model Weights: {dict(zip(model_names, [f'{w:.3f}' for w in ensemble_weights]))}")
-
-if target_achieved:
-    print("\n🎉 SUCCESS: Target achieved!")
-    print("✅ Validation accuracy ≥92% OR Test accuracy ≥92%")
-    print("✅ Ensemble approach reduces overfitting")
-    print("🏆 Model ready for production deployment!")
-else:
-    remaining = 0.92 - max(max(individual_accuracies), final_accuracy)
-    print(f"\n🔶 CLOSE: Need {remaining:.4f} ({remaining*100:.2f}%) more accuracy")
-    print("💡 Recommendations:")
-    print("   - Collect more diverse training data")
-    print("   - Try different architectures (Vision Transformer)")
-    print("   - Implement advanced augmentations (CutMix, RandAugment)")
-
-print(f"\n🔬 TECHNICAL SUMMARY:")
-print(f"   📋 Architecture: Multi-model ensemble ({len(model_names)} models)")
-print(f"   🎯 Best Individual: {model_names[best_model_idx]}")
-print(f"   ⚙️ Techniques: Transfer Learning + Label Smoothing + Ensemble")
-print(f"   🏁 Status: {'PRODUCTION READY' if target_achieved else 'NEEDS MINOR TUNING'}")
+print(f" Target Validation Accuracy: 92.00%")
+print(f" Best Individual Val Accuracy: {max(individual_accuracies):.4f} ({max(individual_accuracies)*100:.2f}%)")
+print(f" Ensemble Test Accuracy: {final_accuracy:.4f} ({final_accuracy*100:.2f}%)")
+print(f" Optimal Ensemble Threshold: {best_ensemble_threshold:.3f}")
+print(f" Model Weights: {dict(zip(model_names, [f'{w:.3f}' for w in ensemble_weights]))}")
 
 print("\n" + "="*70)
